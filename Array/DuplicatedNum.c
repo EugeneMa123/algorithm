@@ -66,7 +66,7 @@ int DupNumInArray(int array[], int count, int* DupNum)
 
 	return FALSE;
 } 
-//方法二：BITmap位判断
+//方法二：BITmap位判断,空间复杂度O(1),时间复杂度O(N);缺陷：保存hashkey的空间需要计算，int型只能用于长度小于32的数组
 int DupNumInArray2(int array[], int count, int* DupNum)
 {
 
@@ -96,6 +96,9 @@ int main()
 		printf("no repeat num");
 		return 0;
 	}
+	
+	
+	
 	
 	printf("repeating Num %d\n",Dup);
 	return 0;
