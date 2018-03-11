@@ -97,6 +97,9 @@ int main()
 		return 0;
 	}
 	
+	
+	
+	
 	printf("repeating Num %d\n",Dup);
 	return 0;
 }
