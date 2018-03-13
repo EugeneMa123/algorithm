@@ -35,3 +35,46 @@ void Quiksort1(int a[],int left,int right)
     return;
   
 }
+//方法二：以第一个数为基准，后边的数进行互换，最后的中间一个数与第一个数交换位置
+void Quiksort2(int a[],int left,int right)
+{
+	int i = left;
+	int j = right;
+	int tmp;
+	int key = a[i];
+
+	if(a ==  NULL)
+	{
+		return;
+	}
+	if(left >= right)
+	{
+		return;
+	}
+	while(i<j)
+	{
+		while(i<j && key <= a[j])
+		{
+			j--;
+		}
+		
+
+		while(i<j && key >= a[i])
+		{
+			i++;
+		}
+		if(i < j)
+		{
+			tmp = a[i];
+			a[i] = a[j];
+			a[j] = tmp;
+		}
+
+	}
+	a[left] = a[i];
+	a[i] = key;
+
+	Quiksort2(a,left,i-1);
+	Quiksort2(a,i+1,right);
+	return;
+}
